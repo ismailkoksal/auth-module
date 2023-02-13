@@ -1482,9 +1482,6 @@ class Oauth2Scheme extends BaseScheme {
     if (this.$auth.options.redirect && normalizePath(this.$auth.ctx.route.path, this.$auth.ctx) !== normalizePath(this.$auth.options.redirect.callback, this.$auth.ctx)) {
       return;
     }
-    if (process.server) {
-      return;
-    }
     const hash = parseQuery(this.$auth.ctx.route.hash.substr(1));
     const parsedQuery = Object.assign({}, this.$auth.ctx.route.query, hash);
     let token = parsedQuery[this.options.token.property];
