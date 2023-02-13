@@ -347,9 +347,9 @@ export class Oauth2Scheme<
       return
     }
     // Callback flow is not supported in server side
-    if (process.server) {
+    /* if (process.server) {
       return
-    }
+    } */
 
     const hash = parseQuery(this.$auth.ctx.route.hash.substr(1))
     const parsedQuery = Object.assign({}, this.$auth.ctx.route.query, hash)
